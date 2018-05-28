@@ -9,21 +9,25 @@ Originally extracted from my [Who's Hacking product](https://liamz.co/blog/build
 
  - `getAppPath`, which gets the app path in development and production (when the app is unpacked from the archive).
  - `getExecutableName` which finds the correct executable for OS and CPU arch.
- - `getGOARCH` and `getGOOS`, which are used above.
+ - `getGOARCH` and `getGOOS`, wphich are used above.
+
+## Install
+`yarn add electron-go-picnic`
 
 ## Usage
 
  1. Cross-compile your Go programs for all platforms at once (Windows/Linux/macOS) using `go-crosscompile.sh`. 
  2. Copy them to a directory in your Electron app. I advise `vendor/`.
  3. Make sure your executable is unpacked in production so it can be run. E.g. with electron-builder, modify `package.json` in the "build" section and add:
-    ```
-        "asarUnpack": [
-            "vendor/"
-        ]
-    ```
+```json
+"asarUnpack": [
+    "vendor/"
+]
+```
+
  4. Then in your Electron code:
 
-```
+```javascript
 const spawn = require('child_process').spawn;
 import { getAppPath, getExecutableName } from 'electron-go-picnic';
 
