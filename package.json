@@ -1,0 +1,38 @@
+{
+  "name": "electron-go-picnic",
+  "version": "1.0.0",
+  "description": "Tools for using Go programs inside Electron apps",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d lib",
+    "start": "nodemon src/index.js --exec yarn build",
+    "prepublish": "npm run build"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liamzebedee/electron-go-picnic.git"
+  },
+  "keywords": [
+    "electron",
+    "go",
+    "golang",
+    "binary",
+    "crossplatform"
+  ],
+  "author": "liamzebedee",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/liamzebedee/electron-go-picnic/issues"
+  },
+  "homepage": "https://github.com/liamzebedee/electron-go-picnic#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0"
+  }
+}
